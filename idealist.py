@@ -22,7 +22,7 @@ async def on_member_join(member):
 @bot.event
 async def on_message(message):
     # check if we're in the introductions channel AND if the message has more than 25 words
-    if message.channel.id == 568014240544325632 and len(message.content.split(" ")) > 25:
+    if message.channel.id == 568014240544325632 and len(message.content.split(" ")) > 50:
         keywords = ["skill", "set", "interest", "current", "project", "stuff", "i", "could", "use", "help", "with"]
         for keyword in keywords:
             if keyword not in message.content.lower():
