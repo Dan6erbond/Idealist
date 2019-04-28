@@ -30,7 +30,8 @@ async def on_message(message):
         await message.add_reaction("👍") # add the thumbsup reaction to show the user the introduction is good
         role = message.channel.guild.get_role(568016105147334677)  # get the verified members role
         await message.author.add_roles(role) # assign it to the user
-    await bot.process_commands(message)
+    else:
+        await bot.process_commands(message)
 
 
 @bot.command(help="Submit an idea to #idea-lists through the bot.")
@@ -78,6 +79,16 @@ async def idea(ctx):
     embed.add_field(name="Would Like To Get Support On", value=support, inline=False)
 
     await bot.get_channel(568044431933046787).send(embed=embed)
+
+    cat = None
+    for category in guild.categories:
+        if category.id == 568072269243351050:
+            cat = category
+
+    if cat is None:
+        return
+
+    await ctx.guild.create_text_channel(name.replace(" ", "-"), category=cat)
 
 
 @bot.event
