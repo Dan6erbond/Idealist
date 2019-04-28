@@ -16,7 +16,7 @@ async def on_member_join(member):
     file = open("bot_intro.txt")
     bot_intro = file.read()
     file.close()
-    await bot.get_channel(568012690761580547).send(bot_intro.format(member))
+    await bot.get_channel(568012485320245262).send(bot_intro.format(member))
 
 
 @bot.event
