@@ -1,0 +1,6 @@
+Hi {0.mention}!
+
+Welcome to {0.guild.name}! A guild where it's all about helping people get their ideas of the ground, working on their skills and supporting each other __together__.
+
+Have a pleasant stay!
+ - Idealist Bot
