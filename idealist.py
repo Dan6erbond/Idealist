@@ -81,14 +81,15 @@ async def idea(ctx):
     await bot.get_channel(568044431933046787).send(embed=embed)
 
     cat = None
-    for category in guild.categories:
+    for category in ctx.guild.categories:
         if category.id == 568072269243351050:
             cat = category
 
     if cat is None:
         return
 
-    await ctx.guild.create_text_channel(name.replace(" ", "-"), category=cat)
+    channel = await ctx.guild.create_text_channel(name.replace(" ", "-"), category=cat)
+    await channel.send(embed=embed)
 
 
 @bot.event
