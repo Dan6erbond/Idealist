@@ -89,7 +89,8 @@ async def idea(ctx):
         return
 
     channel = await ctx.guild.create_text_channel(name.replace(" ", "-"), category=cat)
-    await channel.send(embed=embed)
+    msg = await channel.send(embed=embed)
+    await msg.pin()
 
 
 @bot.event
